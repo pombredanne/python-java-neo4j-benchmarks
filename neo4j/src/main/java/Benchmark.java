@@ -61,10 +61,10 @@ public class Benchmark {
 		assert copy.equals(node);
 	}
 
-	void create_10000_vertex() {
+	void create_1000_vertex() {
 		Transaction tx = db.beginTx();
 		try {
-			for (int i = 0; i < 10000; i++) {
+			for (int i = 0; i < 1000; i++) {
 				db.createNode();
 			}
 			tx.success();
@@ -73,10 +73,10 @@ public class Benchmark {
 		}
 	}
 
-	void create_and_count_10000_vertex() {
+	void create_and_count_1000_vertex() {
 		Transaction tx = db.beginTx();
 		try {
-			for (int i = 0; i < 10000; i++) {
+			for (int i = 0; i < 1000; i++) {
 				db.createNode();
 			}
 			tx.success();
@@ -91,10 +91,10 @@ public class Benchmark {
 		}
 	}
 
-	void create_10000_vertex_and_delete() {
+	void create_1000_vertex_and_delete() {
 		Transaction tx = db.beginTx();
 		try {
-			for (int i = 0; i < 10000; i++) {
+			for (int i = 0; i < 1000; i++) {
 				db.createNode();
 			}
 			tx.success();
@@ -118,7 +118,7 @@ public class Benchmark {
 	void create_relationship() {
 		Transaction tx = db.beginTx();
 		try {
-			for (int i = 0; i < 10000; i++) {
+			for (int i = 0; i < 1000; i++) {
 				Node amirouche = db.createNode();
 				Node neo4j = db.createNode();
 				amirouche.createRelationshipTo(
@@ -162,7 +162,7 @@ public class Benchmark {
 		Transaction tx = db.beginTx();
 		try {
 			LinkedList<Node> nodes = new LinkedList<Node>();
-			for (int i = 0; i < 10000; i++) {
+			for (int i = 0; i < 1000; i++) {
 				Node node = db.createNode();
 				nodes.add(node);
 			}
@@ -214,7 +214,7 @@ public class Benchmark {
 		time = 0;
 		benchmark.startDatabase();
 		benchmark.startChrono();
-		for(i=0; i<100; i++) {
+		for(i=0; i<1000; i++) {
 			benchmark.create_and_retrieve_vertex();
 		}
 		time = benchmark.getTime();
@@ -225,40 +225,40 @@ public class Benchmark {
 		time = 0;
 		benchmark.startDatabase();
 		benchmark.startChrono();
-		for(i=0; i<100; i++) {
-			benchmark.create_10000_vertex();
+		for(i=0; i<1000; i++) {
+			benchmark.create_1000_vertex();
 		}
 		time = benchmark.getTime();
 		benchmark.stopDatabase();
-		System.out.print("create_10000_vertex * 1000 ");
+		System.out.print("create_1000_vertex * 1000 ");
 		System.out.println(time);
 		
 		time = 0;
 		benchmark.startDatabase();
 		benchmark.startChrono();
-		for(i=0; i<100; i++) {
-			benchmark.create_10000_vertex_and_delete();
+		for(i=0; i<1000; i++) {
+			benchmark.create_1000_vertex_and_delete();
 		}
 		time = benchmark.getTime();
 		benchmark.stopDatabase();
-		System.out.print("create_10000_vertex_and_delete * 1000 ");
+		System.out.print("create_1000_vertex_and_delete * 1000 ");
 		System.out.println(time);
 		
 		time = 0;
 		benchmark.startDatabase();
 		benchmark.startChrono();
-		for(i=0; i<100; i++) {
-			benchmark.create_and_count_10000_vertex();
+		for(i=0; i<1000; i++) {
+			benchmark.create_and_count_1000_vertex();
 		}
 		time = benchmark.getTime();
 		benchmark.stopDatabase();
-		System.out.print("create_and_count_10000_vertex * 1000 ");
+		System.out.print("create_and_count_1000_vertex * 1000 ");
 		System.out.println(time);
 		
 		time = 0;
 		benchmark.startDatabase();
 		benchmark.startChrono();
-		for(i=0; i<100; i++) {
+		for(i=0; i<1000; i++) {
 			benchmark.create_and_retrieve_relationship();
 		}
 		time = benchmark.getTime();
@@ -269,7 +269,7 @@ public class Benchmark {
 		time = 0;
 		benchmark.startDatabase();
 		benchmark.startChrono();
-		for(i=0; i<100; i++) {
+		for(i=0; i<1000; i++) {
 			benchmark.create_relationship();
 		}
 		time = benchmark.getTime();
@@ -289,7 +289,7 @@ public class Benchmark {
 		time = 0;
 		benchmark.startDatabase();
 		benchmark.startChrono();
-		for(i=0; i<100; i++) {
+		for(i=0; i<1000; i++) {
 			benchmark.create_1000_relationships_and_count();
 		}
 		time = benchmark.getTime();
