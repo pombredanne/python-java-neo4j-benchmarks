@@ -83,13 +83,11 @@ public class Benchmark {
 		} finally {
 			tx.finish();
 		}
-		long count = 0;
 		GlobalGraphOperations operations = GlobalGraphOperations.at(db);
 		Iterator<Node> iter = operations.getAllNodes().iterator();
 		while (iter.hasNext()) {
 			Node node = iter.next();
-			count = count + node.getId();
-			System.out.println(count);
+			node.getId();
 		}
 	}
 
