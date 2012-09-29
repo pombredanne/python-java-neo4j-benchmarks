@@ -1,3 +1,4 @@
+import gc
 import shutil
 from time import time
 from itertools import permutations
@@ -23,10 +24,12 @@ class Chrono(object):
         self.total = 0
 
     def __enter__(self):
+        gc.disable()
         self.start = time()
 
     def __exit__(self, *args, **kwargs):
         self.total += time() - self.start
+        gc.enable()
 
 iterate = list()
 single = list()
