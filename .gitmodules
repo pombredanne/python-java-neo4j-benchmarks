@@ -1,0 +1,6 @@
+[submodule "neo4j-jnius"]
+	path = neo4j-jnius
+	url = git://github.com/amirouche/neo4j-embedded-alt.git
+[submodule "neo4j-jpype"]
+	path = neo4j-jpype
+	url = git://github.com/amirouche/neo4j-embedded-alt.git
